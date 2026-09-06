@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Giới Thiệu Thông Tin Cá Nhân - Nguyễn Hoài Nam</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+            --subtext: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+            background: var(--card);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 4px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 6px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .info-item {
+            background: #f1f5f9;
+            padding: 10px 14px;
+            border-radius: 8px;
+        }
+
+        .info-item label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--subtext);
+        }
+
+        .info-item span {
+            font-weight: 600;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .social-btn {
+            text-decoration: none;
+            color: var(--primary);
+            background: #eff6ff;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .social-btn:hover {
+            background: #dbeafe;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Ảnh đại diện & Họ tên -->
+        <div class="header">
+            <img src="avatar.jpg" alt="Ảnh đại diện" class="avatar">
+            <h1>NGUYỄN HOÀI NAM</h1>
+            <p>Sinh viên CNTT</p>
+        </div>
+
+        <div class="content">
+            <!-- Thông tin bắt buộc -->
+            <div class="section-title">THÔNG TIN CÁ NHÂN</div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <label>Mã sinh viên</label>
+                    <span>24107879</span>
+                </div>
+                <div class="info-item">
+                    <label>Ngày sinh</label>
+                    <span>26/05/2006</span>
+                </div>
+                <div class="info-item">
+                    <label>Giới tính</label>
+                    <span>Nam</span>
+                </div>
+            </div>
+
+            <!-- Sở thích & Sở trường -->
+            <div class="section-title">SỞ THÍCH</div>
+            <ul>
+                <li>Chơi đá bóng và tập luyện thể thao</li>
+            </ul>
+
+            <div class="section-title">SỞ TRƯỜNG</div>
+            <ul>
+                <li>Tư duy logic và giải quyết vấn đề</li>
+                <li>Khả năng làm việc nhóm tốt</li>
+            </ul>
+
+            <div class="section-title">KẾT NỐI</div>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" class="social-btn">Facebook</a>
+                <a href="https://github.com" target="_blank" class="social-btn">GitHub</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
