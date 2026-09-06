@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang Giới Thiệu Thông Tin Cá Nhân - Nguyễn Hoài Nam</title>
+    <!-- FontAwesome Font Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #2563eb;
+            --primary-hover: #1d4ed8;
             --bg: #f8fafc;
             --card: #ffffff;
             --text: #1e293b;
@@ -36,6 +39,7 @@
             border-radius: 16px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
             overflow: hidden;
+            transition: transform 0.3s ease;
         }
 
         .header {
@@ -53,6 +57,11 @@
             border: 4px solid white;
             margin-bottom: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05) rotate(2deg);
         }
 
         .header h1 {
@@ -93,6 +102,12 @@
             background: #f1f5f9;
             padding: 10px 14px;
             border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .info-item:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
         }
 
         .info-item label {
@@ -104,6 +119,31 @@
         .info-item span {
             font-weight: 600;
         }
+
+        /* Skills Progress Bar */
+        .skill-item {
+            margin-bottom: 10px;
+        }
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
         ul {
             padding-left: 20px;
         }
@@ -122,14 +162,21 @@
             text-decoration: none;
             color: var(--primary);
             background: #eff6ff;
-            padding: 8px 14px;
+            padding: 8px 16px;
             border-radius: 6px;
             font-weight: 600;
             font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
         }
 
         .social-btn:hover {
-            background: #dbeafe;
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
         }
     </style>
 </head>
@@ -161,6 +208,17 @@
                 </div>
             </div>
 
+            <!-- Kỹ năng lập trình -->
+            <div class="section-title">KỸ NĂNG</div>
+            <div class="skill-item">
+                <div class="skill-info"><span>HTML / CSS</span><span>75%</span></div>
+                <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-info"><span>Git / GitHub</span><span>80%</span></div>
+                <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+            </div>
+
             <!-- Sở thích & Sở trường -->
             <div class="section-title">SỞ THÍCH</div>
             <ul>
@@ -175,8 +233,12 @@
 
             <div class="section-title">KẾT NỐI</div>
             <div class="social-links">
-                <a href="https://facebook.com" target="_blank" class="social-btn">Facebook</a>
-                <a href="https://github.com" target="_blank" class="social-btn">GitHub</a>
+                <a href="https://www.facebook.com/share/1EiWXaFYDC/" target="_blank" class="social-btn">
+                    <i class="fa-brands fa-facebook"></i> Facebook
+                </a>
+                <a href="https://github.com/namhihihi0" target="_blank" class="social-btn">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
             </div>
         </div>
     </div>
