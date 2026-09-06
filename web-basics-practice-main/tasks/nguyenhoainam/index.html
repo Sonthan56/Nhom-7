@@ -3,50 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Giới Thiệu Thông Tin Cá Nhân - Nguyễn Hoài Nam</title>
-    <!-- FontAwesome Font Icon -->
+    <title>Trang Giới Thiệu - Nguyễn Hoài Nam</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --bg: #f8fafc;
-            --card: #ffffff;
-            --text: #1e293b;
-            --subtext: #64748b;
+            --bg: #090d16;
+            --card-bg: #111827;
+            --accent-cyan: #06b6d4;
+            --accent-purple: #a855f7;
+            --text-main: #f9fafb;
+            --text-sub: #9ca3af;
+            --border: rgba(255, 255, 255, 0.08);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Segoe UI', system-ui, sans-serif;
         }
 
         body {
             background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 40%);
+            color: var(--text-main);
+            min-height: 100vh;
             padding: 40px 20px;
             display: flex;
             justify-content: center;
+            align-items: center;
         }
 
         .container {
             max-width: 650px;
             width: 100%;
-            background: var(--card);
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(6, 182, 212, 0.15);
             overflow: hidden;
-            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        /* Thanh viền Neon trang trí phía trên */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
         }
 
         .header {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            color: white;
+            padding: 40px 20px 20px;
             text-align: center;
-            padding: 40px 20px;
         }
 
         .avatar {
@@ -54,24 +68,32 @@
             height: 130px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid white;
-            margin-bottom: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .avatar:hover {
-            transform: scale(1.05) rotate(2deg);
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+            border-color: var(--accent-purple);
         }
 
         .header h1 {
-            font-size: 1.8rem;
-            margin-bottom: 4px;
+            font-size: 2.1rem;
+            margin-top: 16px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            background: linear-gradient(135deg, #38bdf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .header p {
-            opacity: 0.9;
+            color: var(--text-sub);
             font-size: 0.95rem;
+            margin-top: 4px;
+            letter-spacing: 0.5px;
         }
 
         .content {
@@ -79,13 +101,16 @@
         }
 
         .section-title {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             font-weight: 700;
-            color: var(--primary);
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 6px;
-            margin-top: 24px;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 26px;
             margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .section-title:first-child {
@@ -94,96 +119,124 @@
 
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 12px;
         }
 
         .info-item {
-            background: #f1f5f9;
-            padding: 10px 14px;
-            border-radius: 8px;
+            background: #1f2937;
+            border: 1px solid var(--border);
+            padding: 12px 16px;
+            border-radius: 12px;
             transition: all 0.2s ease;
         }
 
         .info-item:hover {
-            background: #e2e8f0;
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
             transform: translateY(-2px);
         }
 
         .info-item label {
             display: block;
-            font-size: 0.8rem;
-            color: var(--subtext);
+            font-size: 0.75rem;
+            color: var(--text-sub);
+            text-transform: uppercase;
         }
 
         .info-item span {
             font-weight: 600;
+            font-size: 0.95rem;
         }
 
         /* Skills Progress Bar */
         .skill-item {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
+
         .skill-info {
             display: flex;
             justify-content: space-between;
             font-size: 0.85rem;
+            margin-bottom: 6px;
             font-weight: 600;
-            margin-bottom: 4px;
         }
+
         .progress-bar {
             width: 100%;
             height: 8px;
-            background: #e2e8f0;
-            border-radius: 4px;
+            background: #1f2937;
+            border-radius: 10px;
             overflow: hidden;
-        }
-        .progress {
-            height: 100%;
-            background: var(--primary);
-            border-radius: 4px;
+            border: 1px solid var(--border);
         }
 
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+        }
+
+        /* List */
         ul {
-            padding-left: 20px;
+            list-style: none;
+            padding: 0;
         }
 
         li {
-            margin-bottom: 6px;
+            background: #1f2937;
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
+        li i {
+            color: var(--accent-cyan);
+            font-size: 0.8rem;
+        }
+
+        /* Social Links */
         .social-links {
             display: flex;
-            gap: 10px;
-            margin-top: 8px;
+            gap: 12px;
+            margin-top: 10px;
         }
 
         .social-btn {
+            flex: 1;
             text-decoration: none;
-            color: var(--primary);
-            background: #eff6ff;
-            padding: 8px 16px;
-            border-radius: 6px;
+            color: var(--text-main);
+            background: #1f2937;
+            border: 1px solid var(--border);
+            padding: 12px;
+            border-radius: 12px;
             font-weight: 600;
             font-size: 0.9rem;
-            display: inline-flex;
+            display: flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .social-btn:hover {
-            background: var(--primary);
-            color: white;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
             transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Ảnh đại diện & Họ tên -->
         <div class="header">
             <img src="avarta.png" alt="Ảnh đại diện" class="avatar">
             <h1>NGUYỄN HOÀI NAM</h1>
@@ -191,8 +244,7 @@
         </div>
 
         <div class="content">
-            <!-- Thông tin bắt buộc -->
-            <div class="section-title">THÔNG TIN CÁ NHÂN</div>
+            <div class="section-title"><i class="fa-solid fa-id-card"></i> Thông tin cá nhân</div>
             <div class="info-grid">
                 <div class="info-item">
                     <label>Mã sinh viên</label>
@@ -208,8 +260,7 @@
                 </div>
             </div>
 
-            <!-- Kỹ năng lập trình -->
-            <div class="section-title">KỸ NĂNG</div>
+            <div class="section-title"><i class="fa-solid fa-code"></i> Kỹ năng</div>
             <div class="skill-item">
                 <div class="skill-info"><span>HTML / CSS</span><span>75%</span></div>
                 <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
@@ -219,29 +270,21 @@
                 <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
             </div>
 
-            <!-- Sở thích & Sở trường -->
-            <div class="section-title">SỞ THÍCH</div>
+            <div class="section-title"><i class="fa-solid fa-gamepad"></i> Sở thích</div>
             <ul>
-                <li>Chơi đá bóng và tập luyện thể thao</li>
+                <li><i class="fa-solid fa-circle-dot"></i> Chơi đá bóng và tập luyện thể thao</li>
             </ul>
 
-            <div class="section-title">SỞ TRƯỜNG</div>
+            <div class="section-title"><i class="fa-solid fa-rocket"></i> Sở trường</div>
             <ul>
-                <li>Tư duy logic và giải quyết vấn đề</li>
-                <li>Khả năng làm việc nhóm tốt</li>
+                <li><i class="fa-solid fa-circle-dot"></i> Tư duy logic và giải quyết vấn đề</li>
+                <li><i class="fa-solid fa-circle-dot"></i> Khả năng làm việc nhóm tốt</li>
             </ul>
 
-            <div class="section-title">KẾT NỐI</div>
+            <div class="section-title"><i class="fa-solid fa-share-nodes"></i> Kết nối</div>
             <div class="social-links">
                 <a href="https://www.facebook.com/share/1EiWXaFYDC/" target="_blank" class="social-btn">
                     <i class="fa-brands fa-facebook"></i> Facebook
                 </a>
                 <a href="https://github.com/namhihihi0" target="_blank" class="social-btn">
-                    <i class="fa-brands fa-github"></i> GitHub
-                </a>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
+                    <i class="fa-brands
