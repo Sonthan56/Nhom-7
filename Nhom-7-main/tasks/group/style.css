@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f5f9;
+    color: #222;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+
+/* =========================
+   TIÊU ĐỀ
+   ========================= */
+
+.group-header {
+    background: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.group-header h1 {
+    font-size: 40px;
+    color: #4f46e5;
+    margin-bottom: 15px;
+}
+
+.group-header p {
+    color: #555;
+}
+
+
+/* =========================
+   SECTION
+   ========================= */
+
+.section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.section h2 {
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   DANH SÁCH THÀNH VIÊN
+   ========================= */
+
+.member-list {
+    padding-left: 25px;
+}
+
+.member-list li {
+    margin: 8px 0;
+}
+
+
+/* =========================
+   THÔNG TIN THÀNH VIÊN
+   ========================= */
+
+.member-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.member-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.member-card img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #4f46e5;
+    margin-bottom: 15px;
+}
+
+.member-card h3 {
+    margin-bottom: 10px;
+    color: #111827;
+}
+
+.member-card p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.member-card a {
+    display: inline-block;
+    text-decoration: none;
+    background: #4f46e5;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+}
+
+.member-card a:hover {
+    background: #3730a3;
+}
+
+
+/* =========================
+   TABLE
+   ========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #4f46e5;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+
+/* =========================
+   FORM
+   ========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"] {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+form input[type="submit"] {
+    width: fit-content;
+    padding: 11px 25px;
+    border: none;
+    border-radius: 6px;
+    background-color: #4f46e5;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #3730a3;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .member-container {
+        grid-template-columns: 1fr;
+    }
+
+    .group-header h1 {
+        font-size: 30px;
+    }
+
+    .section {
+        padding: 20px;
+    }
+
+}
