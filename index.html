@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tính Điểm Trung Bình & Xếp Loại Sinh Viên</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="app-header">
+      <h1>Quản Lý & Tính Điểm Sinh Viên</h1>
+      <p>Ứng dụng tính điểm trung bình và xếp loại học tập</p>
+    </header>
+
+    <main class="app-main">
+      <!-- Form Nhập Dữ Liệu -->
+      <section class="card">
+        <h2>Thông Tin Sinh Viên & Điểm Số</h2>
+        <form id="student-form" novalidate>
+          <div class="form-group">
+            <label for="fullName">Họ và tên sinh viên <span class="required">*</span></label>
+            <input type="text" id="fullName" placeholder="Ví dụ: Nguyễn Văn A" autocomplete="off">
+            <div class="error-message" id="error-fullName"></div>
+          </div>
+
+          <div class="subject-grid">
+            <div class="form-group">
+              <label for="score1">1. Giải tích 1 <span class="required">*</span></label>
+              <input type="number" id="score1" min="0" max="10" step="0.1" placeholder="0.0 - 10">
+              <div class="error-message" id="error-score1"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="score2">2. Đại số tuyến tính <span class="required">*</span></label>
+              <input type="number" id="score2" min="0" max="10" step="0.1" placeholder="0.0 - 10">
+              <div class="error-message" id="error-score2"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="score3">3. Xác suất thống kê <span class="required">*</span></label>
+              <input type="number" id="score3" min="0" max="10" step="0.1" placeholder="0.0 - 10">
+              <div class="error-message" id="error-score3"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="score4">4. Tin học đại cương <span class="required">*</span></label>
+              <input type="number" id="score4" min="0" max="10" step="0.1" placeholder="0.0 - 10">
+              <div class="error-message" id="error-score4"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="score5">5. Xây dựng ứng dụng Web <span class="required">*</span></label>
+              <input type="number" id="score5" min="0" max="10" step="0.1" placeholder="0.0 - 10">
+              <div class="error-message" id="error-score5"></div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="btn-calculate" class="btn btn-primary">Tính Kết Quả</button>
+            <button type="button" id="btn-reset" class="btn btn-secondary">Nhập Lại</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Khung Hiển Thị Kết Quả -->
+      <section class="card result-card hidden" id="result-section">
+        <h2>Kết Quả Học Tập</h2>
+        <div class="student-info-summary">
+          <p><strong>Họ và tên:</strong> <span id="res-name" class="highlight-name"></span></p>
+        </div>
+
+        <div class="table-responsive">
+          <table class="result-table">
+            <thead>
+              <tr>
+                <th>STT</th>
+                <th>Môn học</th>
+                <th>Điểm số</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Giải tích 1</td>
+                <td id="res-score1">-</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Đại số tuyến tính</td>
+                <td id="res-score2">-</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Xác suất thống kê</td>
+                <td id="res-score3">-</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Tin học đại cương</td>
+                <td id="res-score4">-</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Xây dựng ứng dụng Web</td>
+                <td id="res-score5">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="summary-box">
+          <div class="summary-item">
+            <span class="label">Điểm trung bình:</span>
+            <span class="value" id="res-average">0.00</span>
+          </div>
+          <div class="summary-item">
+            <span class="label">Xếp loại học tập:</span>
+            <span class="badge" id="res-classification">Chưa xếp loại</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
